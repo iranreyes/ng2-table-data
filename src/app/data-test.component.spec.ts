@@ -14,9 +14,4 @@ describe('App: DataTest', () => {
       inject([DataTestAppComponent], (app: DataTestAppComponent) => {
     expect(app).toBeTruthy();
   }));
-
-  it('should have as title \'data-test works!\'',
-      inject([DataTestAppComponent], (app: DataTestAppComponent) => {
-    expect(app.title).toEqual('data-test works!');
-  }));
 });

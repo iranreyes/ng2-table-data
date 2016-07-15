@@ -1,3 +1,5 @@
-<h1>
-  {{title}}
-</h1>
+<div>
+  <button type="button" (click)="addRow()">Add Row</button>
+  <button type="button" (click)="addColumns()">Add Column</button>
+</div>
+<app-table [entry]="table" (onUpdate)="updateModel($event)"></app-table>

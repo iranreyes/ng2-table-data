@@ -1,0 +1,4 @@
+<div *ngFor="let row of entry.table; let i = index">
+  <app-cell *ngFor="let cell of row; let j = index" [field]="cell" [row]="i" [col]="j" (onKey)="onDataChange($event)"></app-cell>
+</div>
+

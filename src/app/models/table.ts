@@ -1,4 +1,13 @@
-export class Table{
+export interface ITable{
+  col: number;
+  row: number;
+  table:Array<Array<string>>;
+  addRows: (rows) => void;
+  addColumns: (number) => void;
+  updateCell: (value, col, row) => void;
+}
+
+export class Table implements ITable{
   col:number;
   row:number;
   table:Array<Array<string>>;
@@ -7,12 +16,14 @@ export class Table{
     this.col = col;
     this.row = row;
     this.table = [];
+
+    this.addRows(this.row);
   }
 
   addRows(rows) {
     for (var i = 0; i < rows; i++) {
       var row = new Array(this.col);
-      row = row.map(function(){return ""});
+      row.fill("hola");
       this.table.push(row);
     }
   }
@@ -23,5 +34,10 @@ export class Table{
         elem.push("");
       }
     })
+  }
+
+  updateCell(value, col, row){
+    console.log(this.table);
+    this.table[col][row] = value;
   }
 }
