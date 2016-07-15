@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+// import {Table} from '../models/table.ts';
 
 @Component({
   moduleId: module.id,
